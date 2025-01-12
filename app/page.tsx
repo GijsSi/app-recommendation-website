@@ -1,4 +1,3 @@
-import {Navbar} from "@/components/navbar";
 import {CategoryContainer} from "@/components/catergory-container";
 
 const categories = [
@@ -52,7 +51,6 @@ const categories = [
 export default function Home() {
     return (
         <div className="min-h-screen bg-background max-w-7xl mx-auto">
-            <Navbar />
             <main>
                 {categories.map((category, index) => (
                     <CategoryContainer key={index} title={category.title} apps={category.apps} />
