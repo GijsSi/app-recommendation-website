@@ -1,101 +1,64 @@
-import Image from "next/image";
+import {Navbar} from "@/components/navbar";
+import {CategoryContainer} from "@/components/catergory-container";
+
+const categories = [
+    {
+        title: "Staff Picks",
+        apps: [
+            { name: "App A", rating: 4.8, image: "https://app-geek.com/data/app-images/net.poopmap_2024-10-01-044003_wuor.webp" },
+            { name: "App B", rating: 4.7, image: "https://app-geek.com/data/app-images/com.figma.mirror_2024-08-23-084010_qfuq.webp" },
+            { name: "App C", rating: 4.9, image: "https://app-geek.com/data/app-images/com.squareup.cash_2024-10-01-095807_xcrm.webp" },
+            { name: "App D", rating: 4.6, image: "https://app-geek.com/data/app-images/epic.mychart.android_2024-10-01-095339_hhhn.webp" },
+            { name: "App E", rating: 4.8, image: "https://app-geek.com/data/app-images/com.mcdonalds.app_2024-10-01-084851_ghcg.webp" },
+            { name: "App A", rating: 4.8, image: "https://app-geek.com/data/app-images/net.poopmap_2024-10-01-044003_wuor.webp" },
+            { name: "App B", rating: 4.7, image: "https://app-geek.com/data/app-images/com.figma.mirror_2024-08-23-084010_qfuq.webp" },
+            { name: "App C", rating: 4.9, image: "https://app-geek.com/data/app-images/com.squareup.cash_2024-10-01-095807_xcrm.webp" },
+            { name: "App D", rating: 4.6, image: "https://app-geek.com/data/app-images/epic.mychart.android_2024-10-01-095339_hhhn.webp" },
+            { name: "App E", rating: 4.8, image: "https://app-geek.com/data/app-images/com.mcdonalds.app_2024-10-01-084851_ghcg.webp" },
+        ]
+    },
+    {
+        title: "Most Downloaded",
+        apps: [
+            { name: "App A", rating: 4.8, image: "https://app-geek.com/data/app-images/net.poopmap_2024-10-01-044003_wuor.webp" },
+            { name: "App B", rating: 4.7, image: "https://app-geek.com/data/app-images/com.figma.mirror_2024-08-23-084010_qfuq.webp" },
+            { name: "App C", rating: 4.9, image: "https://app-geek.com/data/app-images/com.squareup.cash_2024-10-01-095807_xcrm.webp" },
+            { name: "App D", rating: 4.6, image: "https://app-geek.com/data/app-images/epic.mychart.android_2024-10-01-095339_hhhn.webp" },
+            { name: "App E", rating: 4.8, image: "https://app-geek.com/data/app-images/com.mcdonalds.app_2024-10-01-084851_ghcg.webp" },
+        ]
+    },
+    {
+        title: "News Apps",
+        apps: [
+            { name: "News X", rating: 4.2, image: "https://app-geek.com/data/app-images/com.android.chrome_2024-10-01-095505_aiwn.webp" },
+            { name: "News Y", rating: 4.4, image: "https://app-geek.com/data/app-images/com.figma.mirror_2024-08-23-084010_qfuq.webp" },
+            { name: "News Z", rating: 4.3, image: "https://app-geek.com/data/app-images/com.squareup.cash_2024-10-01-095807_xcrm.webp" },
+            { name: "News W", rating: 4.5, image: "https://app-geek.com/data/app-images/net.sharewire.parkmobilev2_2024-08-23-090556_tjxr.webp" },
+            { name: "News V", rating: 4.1, image: "https://app-geek.com/data/app-images/jp.co.canon.bsd.ad.pixmaprint_2024-10-01-085507_jwbj.webp" },
+        ]
+    },
+    {
+        title: "Most Rated",
+        apps: [
+            { name: "App A", rating: 4.8, image: "https://app-geek.com/data/app-images/net.poopmap_2024-10-01-044003_wuor.webp" },
+            { name: "App B", rating: 4.7, image: "https://app-geek.com/data/app-images/com.figma.mirror_2024-08-23-084010_qfuq.webp" },
+            { name: "App C", rating: 4.9, image: "https://app-geek.com/data/app-images/com.squareup.cash_2024-10-01-095807_xcrm.webp" },
+            { name: "App D", rating: 4.6, image: "https://app-geek.com/data/app-images/epic.mychart.android_2024-10-01-095339_hhhn.webp" },
+            { name: "App E", rating: 4.8, image: "https://app-geek.com/data/app-images/com.mcdonalds.app_2024-10-01-084851_ghcg.webp" },
+        ]
+    }
+]
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    return (
+        <div className="min-h-screen bg-background max-w-7xl mx-auto">
+            <Navbar />
+            <main>
+                {categories.map((category, index) => (
+                    <CategoryContainer key={index} title={category.title} apps={category.apps} />
+                ))}
+            </main>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    )
 }
+
